@@ -4,10 +4,11 @@
 name: Python application
 
 on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      post_body:
+        type: string
+        required: true
 
 permissions:
   contents: read
