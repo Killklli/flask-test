@@ -44,7 +44,7 @@ def main(arg1, arg2):
     setting_data = json.loads(loaded_data)
     print(setting_data)
     setting_data["seed"] = random.randint(0, 100000000)
-    generate(setting_data, "out.bps")
+    generate(setting_data, "out.lanky")
 
 
 if __name__ == "__main__":
