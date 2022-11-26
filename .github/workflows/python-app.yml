@@ -26,6 +26,6 @@ jobs:
       run: |
         python3 cli.py
   
-- uses: actions/upload-artifact@v3
-  with:
-    path: out.lanky
+    - uses: actions/upload-artifact@v3
+      with:
+        path: out.lanky
