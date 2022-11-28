@@ -2,7 +2,7 @@ name: Python application
 
 on:
   repository_dispatch:
-    types: do-something
+    types: generate_seed
     inputs:
       post_body:
         type: string
