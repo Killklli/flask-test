@@ -3,10 +3,6 @@ name: Python application
 on:
   repository_dispatch:
     types: generate_seed
-    inputs:
-      post_body:
-        type: string
-        required: true
 
 permissions:
   contents: read
@@ -16,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      POST_BODY: ${{ github.event.inputs.post_body }}
+      POST_BODY: ${{ github.event.client_payload.post_body }}
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.11
