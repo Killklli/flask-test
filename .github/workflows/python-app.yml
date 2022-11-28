@@ -1,7 +1,7 @@
 name: Python application
 
 on:
-  workflow_dispatch:
+  repository_dispatch:
     inputs:
       post_body:
         type: string
