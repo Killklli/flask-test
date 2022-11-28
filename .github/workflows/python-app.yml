@@ -2,6 +2,7 @@ name: Python application
 
 on:
   repository_dispatch:
+    types: do-something
     inputs:
       post_body:
         type: string
