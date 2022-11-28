@@ -25,6 +25,7 @@ jobs:
         python-version: "3.11"
     - name: run build
       run: |
+        echo $POST_BODY
         python3 cli.py
   
     - uses: actions/upload-artifact@v3
