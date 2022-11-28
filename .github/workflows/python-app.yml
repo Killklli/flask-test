@@ -14,8 +14,12 @@ jobs:
     env:
       ID: ${{ github.event.client_payload.id }}
       POST_BODY: ${{ github.event.client_payload.post_body }}
+      BRANCH: ${{ github.event.client_payload.branch }}
     steps:
     - uses: actions/checkout@v3
+      with:
+        repository: 2dos/DK64-Randomizer
+        ref: $BRANCH
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
       with:
