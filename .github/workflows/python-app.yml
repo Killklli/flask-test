@@ -17,6 +17,7 @@ jobs:
       BRANCH: ${{ github.event.client_payload.branch }}
     steps:
     - uses: actions/checkout@v3
+      if: github.event.client_payload.branch == 'dev'
       with:
         repository: 2dos/DK64-Randomizer-Dev
     - name: Set up Python 3.11
