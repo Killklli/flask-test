@@ -18,8 +18,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        repository: 2dos/DK64-Randomizer
-        ref: $BRANCH
+        repository: 2dos/DK64-Randomizer-Dev
     - name: Set up Python 3.11
       uses: actions/setup-python@v3
       with:
