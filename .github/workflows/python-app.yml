@@ -35,7 +35,7 @@ jobs:
 
     - name: run build
       id: gen_seed
-      run: python3 cli.py --output out.lanky >> $GITHUB_OUTPUT
+      run: python3 cli.py --output out.lanky
 
     - uses: sarisia/actions-status-discord@v1
       if: ${{ always() && contains(needs.*.result, 'failure') }}
