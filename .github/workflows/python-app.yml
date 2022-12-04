@@ -34,7 +34,7 @@ jobs:
 #         python-version: "3.11"
 
     - name: run build
-      run: python3 cli.py --output out.lanky >log.txt 2>&1
+      run: python3 cli.py --output out.lanky 2>log.txt
   
     - name: Get Log
       if: ${{ failure() }}
