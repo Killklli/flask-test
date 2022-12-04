@@ -46,7 +46,7 @@ jobs:
       with:
         nocontext: True
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        description: \`\`\`${{steps.gen_seed.outputs.gen_seed}}\`\`\`
+        description: ${{steps.gen_seed.outputs.gen_seed}}
 
 
     - uses: actions/upload-artifact@v3
