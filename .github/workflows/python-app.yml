@@ -37,11 +37,12 @@ jobs:
       run: python3 cli.py --output out.lanky > log.txt
   
     - name: Get Log
+      if: ${{ failure() }}
       id: gen_seed
       run: echo ::set-output name=gen_seed::$(cat log.txt)
     
     - uses: sarisia/actions-status-discord@v1
-      if: ${{ always() && contains(needs.*.result, 'failure') }}
+      if: ${{ failure() }}
       with:
         nocontext: True
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
