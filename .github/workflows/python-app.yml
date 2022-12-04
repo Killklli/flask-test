@@ -28,10 +28,10 @@ jobs:
       with:
         repository: 2dos/DK64-Randomizer-Release
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.11"
+#     - name: Set up Python 3.11
+#       uses: actions/setup-python@v3
+#       with:
+#         python-version: "3.11"
 
     - name: run build
       run: python3 cli.py --output out.lanky
