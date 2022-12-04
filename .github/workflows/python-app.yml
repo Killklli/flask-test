@@ -34,8 +34,17 @@ jobs:
 #         python-version: "3.11"
 
     - name: run build
-      run: python3 cli.py --output out.lanky
-  
+      id: gen_seed
+      run: python3 cli.py --output out.lanky >> $GITHUB_OUTPUT
+
+    - uses: sarisia/actions-status-discord@v1
+      if: ${{ always() && contains(needs.*.result, 'failure') }}
+      with:
+        nocontext: True
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        description: ${{join(steps.gen_seed.outputs.*, '\n')}}
+
+
     - uses: actions/upload-artifact@v3
       with:
         name: $ID
